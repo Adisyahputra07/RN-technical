@@ -1,15 +1,13 @@
-import { Button, Modal } from "native-base";
+import { Center, Modal } from "native-base";
 import React, { useEffect, useState } from "react";
-import { View, Text } from "react-native";
+import { Text } from "react-native";
 
 export default function DogSub(props) {
   const { showModal, onHide, endPoint } = props;
+  let title = endPoint.toUpperCase();
   const [dog, setDog] = useState([]);
 
   useEffect(() => {
-    // fetch(`https://dog.ceo/api/breed/australian/list`)
-    console.log("ini item", endPoint);
-
     endPoint === ""
       ? null
       : fetch(`https://dog.ceo/api/breed/${endPoint}/list`)
@@ -23,10 +21,18 @@ export default function DogSub(props) {
     <Modal isOpen={showModal} onClose={() => onHide()}>
       <Modal.Content maxWidth="400px">
         <Modal.CloseButton />
-        <Modal.Header>{endPoint}</Modal.Header>
+        <Modal.Header>
+          <Text fontSize={23} fontWeight="bold" color="white" py={2}>
+            {title.toUpperCase()}
+          </Text>
+        </Modal.Header>
+        {/* MAIN MAIN MAIN */}
         {dog.length < 1 ? (
-          <Modal.Body>{`Anjing ${endPoint} hanya satu jenis`}</Modal.Body>
+          <Modal.Body>
+            <Center>{`Anjing ${endPoint} hanya satu jenis...`}</Center>
+          </Modal.Body>
         ) : (
+          // LIST LIST LIST
           <Modal.Body>{dog}</Modal.Body>
         )}
       </Modal.Content>

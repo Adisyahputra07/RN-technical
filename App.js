@@ -1,6 +1,6 @@
 import React from "react";
 import { NativeBaseProvider } from "native-base";
-import CallingApi from "./src/CallingApi";
+import CallingApi from "./src/Main";
 import Nav from "./src/Nav";
 
 export default function App() {
@@ -9,5 +9,5 @@ export default function App() {
       <Nav />
       <CallingApi />
     </NativeBaseProvider>
-  );
+  
 }
