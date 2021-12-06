@@ -25,11 +25,15 @@ export default function Main() {
   let arr = Object.keys(dog);
 
   const handleModal = (item) => {
+    setItem([]);
+
     setShowModal(true);
+
     setItem(item);
   };
 
   const handleModalPhoto = (items) => {
+    setItemPhoto([]);
     setShowModalPhoto(true);
     setItemPhoto(items);
   };

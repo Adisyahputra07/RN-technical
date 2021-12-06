@@ -1,13 +1,13 @@
 import React from "react";
 import { NativeBaseProvider } from "native-base";
-import CallingApi from "./src/Index";
 import Nav from "./src/Nav";
+import Main from "./src/Main";
 
 export default function App() {
   return (
     <NativeBaseProvider>
       <Nav />
-      <CallingApi />
+      <Main />
     </NativeBaseProvider>
   );
 }
